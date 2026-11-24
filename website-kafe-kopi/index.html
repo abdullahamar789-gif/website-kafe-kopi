@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kedai Sangrai — Kopi Sangrai Harian</title>
+  <meta name="description" content="Kedai kopi dengan biji sangrai sendiri setiap pagi. Lihat menu, jam buka, dan lokasi kami.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a href="#beranda" class="logo">Kedai Sangrai</a>
+    <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false">Menu</button>
+    <nav id="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kunjungi kami</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-text">
+        <h1>Disangrai pagi ini, diseduh siang ini.</h1>
+        <p>Kami menyangrai biji kopi dari petani Gayo, Toraja, dan Flores di dapur belakang kedai, setiap hari sebelum buka.</p>
+        <a class="btn" href="#menu">Lihat menu</a>
+      </div>
+      <img class="hero-img" src="images/kopi.jpg" alt="Secangkir kopi hitam yang baru diseduh di atas meja kayu" width="800" height="1000">
+    </section>
+
+    <section class="menu" id="menu">
+      <h2>Menu</h2>
+      <div class="tabs" role="tablist" aria-label="Kategori menu">
+        <button role="tab" class="tab active" data-kategori="kopi" aria-selected="true">Kopi</button>
+        <button role="tab" class="tab" data-kategori="nonkopi" aria-selected="false">Non-kopi</button>
+        <button role="tab" class="tab" data-kategori="makanan" aria-selected="false">Makanan</button>
+      </div>
+      <ul class="menu-list" id="menu-list" aria-live="polite"></ul>
+    </section>
+
+    <section class="tentang" id="tentang">
+      <img src="images/cafe.jpg" alt="Suasana ruang dalam Kedai Sangrai dengan bar kayu dan mesin espresso" width="900" height="700" loading="lazy">
+      <div>
+        <h2>Kedai kecil, 24 kursi.</h2>
+        <p>Kedai Sangrai dibuka pada 2019 oleh dua teman kuliah yang bosan minum kopi gosong. Kami membeli langsung dari petani, menyangrai dalam batch kecil, dan menyeduh satu cangkir pada satu waktu.</p>
+        <p>Datang untuk bekerja, mengobrol, atau sekadar duduk. Wi-Fi gratis dan colokan ada di setiap meja.</p>
+      </div>
+    </section>
+
+    <section class="kontak" id="kontak">
+      <h2>Kunjungi kami</h2>
+      <div class="kontak-grid">
+        <div>
+          <h3>Alamat</h3>
+          <p>Jl. Kemang Raya No. 12<br>Jakarta Selatan 12730</p>
+        </div>
+        <div>
+          <h3>Jam buka</h3>
+          <table>
+            <tr><td>Senin – Jumat</td><td>07.00 – 22.00</td></tr>
+            <tr><td>Sabtu – Minggu</td><td>08.00 – 23.00</td></tr>
+          </table>
+          <p id="status-buka" class="status"></p>
+        </div>
+        <div>
+          <h3>Pesan meja</h3>
+          <form id="form-reservasi" novalidate>
+            <label for="nama">Nama</label>
+            <input id="nama" name="nama" type="text" autocomplete="name" required>
+            <label for="tamu">Jumlah orang</label>
+            <input id="tamu" name="tamu" type="number" min="1" max="12" value="2" required>
+            <button class="btn" type="submit">Kirim lewat WhatsApp</button>
+            <p class="pesan-form" id="pesan-form" role="alert"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Kedai Sangrai. Instagram @kedaisangrai</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
